@@ -88,7 +88,7 @@ if (BUILD_C_BINDINGS)
     set_property(TARGET flann_s PROPERTY COMPILE_DEFINITIONS FLANN_STATIC)
 
     if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_COMPILER_IS_GNUCC)
-        add_library(flann_cpp SHARED "main.cpp")
+        add_library(flann SHARED "main.cpp")
         set_target_properties(flann PROPERTIES LINKER_LANGUAGE CXX)
         target_link_libraries(flann -Wl,-whole-archive flann_s -Wl,-no-whole-archive)
     else()
